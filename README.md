@@ -14,51 +14,16 @@
 
 > **免责声明：仅供参考。** 本项目内容仅供学习与交流参考，属于经验建议，不保证适用于所有人或取得特定效果。具体问题请根据事实情况分析，结合自身处境、关系与适用规则独立判断，不宜直接照搬示例。
 
-### [阅读与检索](https://kkk-bot.github.io/HowToGetAlong/) · [连续阅读](https://kkk-bot.github.io/HowToGetAlong/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.html) · [让 AI 按指南回答](skills/social-situations-guide/SKILL.md)
+### [在线检索与阅读](https://renqingshigu.21212121.xyz/) · [连续阅读版](https://renqingshigu.21212121.xyz/阅读全文.html) · [个人主页与博客](https://21212121.xyz/) · [高性价比人生指南](https://rensheng.21212121.xyz/)
 
 | 入口 | 内容 |
 |---|---|
-| 免费下载 | [免费版 PDF v1.23.0](https://github.com/kkk-bot/HowToGetAlong/raw/refs/heads/main/downloads/%E4%BA%BA%E6%83%85%E4%B8%96%E6%95%85%E6%8C%87%E5%8D%97.pdf) · [HTML 检索页](https://kkk-bot.github.io/HowToGetAlong/downloads/html.html) · [Markdown](https://github.com/kkk-bot/HowToGetAlong/raw/refs/heads/main/%E5%AE%8C%E6%95%B4%E6%8C%87%E5%8D%97.md) · [项目 ZIP](https://github.com/kkk-bot/HowToGetAlong/archive/refs/heads/main.zip) |
-| 阅读 | [完整文字版](完整指南.md) · [使用指南](https://kkk-bot.github.io/HowToGetAlong/docs/usage.html) |
-| 练习 | [交流复盘与场景练习](https://kkk-bot.github.io/HowToGetAlong/docs/practice.html) |
-| 反馈 | [读者反馈与案例征集](https://kkk-bot.github.io/HowToGetAlong/docs/feedback.html) · [填写读者反馈](https://github.com/kkk-bot/HowToGetAlong/issues/new?template=reading-feedback.yml) |
-| 查阅 | [依据与核实记录](https://kkk-bot.github.io/HowToGetAlong/docs/verification.html) · [编写与纠错规范](https://kkk-bot.github.io/HowToGetAlong/docs/editorial-guide.html) · [论文与文章资料](https://kkk-bot.github.io/HowToGetAlong/docs/research-notes.html) · [访谈与博客笔记](https://kkk-bot.github.io/HowToGetAlong/docs/interview-notes.html) · [来源索引](https://kkk-bot.github.io/HowToGetAlong/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.html#sources) |
-
-点击上方“阅读与检索”或“连续阅读”可直接在线阅读。需要离线使用时，下载项目 ZIP，解压后用浏览器打开 `index.html` 或 `阅读全文.html`。
-
-免费版网页、文字与 PDF 已统一更新至 v1.23.0，十章各完善一个日常场景，保留 10 章 77 条及原条号；GitHub 下载的 PDF 第 2 页保留作者抖音、小红书账号及二维码图片，封面保留醒目的原创作者署名。
-
-**版本区分：** 本仓库、在线网页及上方下载均为免费公开版。付费版单独维护内容、版本和 PDF，不随本仓库或项目 ZIP 提供，也不与免费版自动同步。付费增强版在基础内容之外补充更细的情境分支、多轮对话与专项练习；具体购买内容、更新范围和交付方式以正式商品页为准。
-
-“HTML 检索页”下载的是项目 ZIP 里的 `index.html`，保存后可直接用浏览器打开，离线搜索和查看全部条目；需要一并使用其他阅读页与下载资料时，请下载项目 ZIP。
-
-## 作者小红书
-
-**YOLO** · 小红书号：**4287159956**
-
-欢迎关注项目更新，交流阅读心得。**《人情世故指南·付费下载版》采用独立 PDF 文件交付，与免费版分别维护，增加场景分支、多轮回应与实操练习。** 内容预览、上线消息与购买方式会在小红书发布，具体内容、更新范围和交付方式以正式商品页面为准。
-
-打开小红书扫描下方二维码，或搜索小红书号 **4287159956** 找到我。GitHub 公开版仍可免费阅读。
-
-<img src="docs/assets/xiaohongshu-yolo-20261012.jpg" alt="YOLO 的小红书二维码，小红书号 4287159956" width="300">
-
-## 作者抖音
-
-**Y O L O** · 抖音号：**793147359**
-
-觉得这个项目对你有帮助，欢迎来抖音关注、点赞支持一下，也欢迎留言交流。谢谢大家的支持！
-
-打开抖音扫描下方二维码，或搜索抖音号 **793147359** 找到我。
-
-<img src="docs/assets/douyin-yolo.jpg" alt="Y O L O 的抖音二维码，抖音号 793147359" width="300">
-
-## 赞赏
-
-觉得作品不错的友友们，可以请作者喝一杯奶茶。有没有赞赏都没关系，不会影响作品质量。谢谢各位的支持！
-
-<img src="docs/assets/appreciation-code.jpg" alt="Eric 的微信赞赏码" width="300">
+| 在线阅读 | [Claude 官方主题检索页](https://renqingshigu.21212121.xyz/) · [连续阅读全文](阅读全文.html) · [完整文字版](完整指南.md) |
+| 本地离线 | 直接下载或双击 `index.html` 即可离线检索，无需联网与服务器 |
+| 查阅与依据 | [使用指南](docs/usage.html) · [编写与纠错规范](docs/editorial-guide.md) · [交流复盘与练习](docs/practice.html) · [来源索引](阅读全文.html#sources) |
 
 ---
+
 
 ## 这份指南想回答的问题
 
@@ -77,11 +42,11 @@
 
 ## 怎么读
 
-- 打开 [阅读与检索页](https://kkk-bot.github.io/HowToGetAlong/)，按关键词、场景和主题查找，也可以输入 `5.7` 等条号，或“怎么送礼”“借钱不还”等常见说法。搜索条件会保留在网址里，刷新或分享链接可以恢复。页面支持离线使用，不需要登录。
-- 在 GitHub 上阅读时，可直接查看下面的分章正文。使用 HTML 页面时，点击仓库的 **Code → Download ZIP**，解压后用浏览器打开 `index.html` 或 `阅读全文.html`。
-- 打开 [连续阅读版](https://kkk-bot.github.io/HowToGetAlong/%E9%98%85%E8%AF%BB%E5%85%A8%E6%96%87.html)，从头阅读全部章节，并可用浏览器打印或保存为 PDF。
+- 打开 [在线检索页](https://renqingshigu.21212121.xyz/)，按关键词、场景和主题查找，也可以输入 `5.7` 等条号，或“怎么送礼”“借钱不还”等常见说法。搜索条件会保留在网址里，刷新或分享链接可以恢复。页面支持离线使用，不需要登录。
+- 在 GitHub 上阅读时，可直接查看分章正文。离线使用时，用浏览器直接双击打开 `index.html` 或 `阅读全文.html`。
+- 打开 [连续阅读版](https://renqingshigu.21212121.xyz/阅读全文.html)，从头阅读全部章节，并可用浏览器打印或保存为 PDF。
 - 下载 [完整文字版](完整指南.md)，离线阅读或继续编辑。
-- 不知道从哪里开始，先看 [使用指南](https://kkk-bot.github.io/HowToGetAlong/docs/usage.html)。
+- 不知道从哪里开始，先看 [使用指南](docs/usage.html)。
 - 条目支持复制示例、收藏和分享。收藏保存在当前浏览器；复制不可用时可手动选择文本。分享链接指向公开在线条目。
 - 10 个条目包含接续对话，展开后可查看第一次表达、后续回应和调整信号；均为编写情境。4.3 补充了领导提议点饮料时，确认费用、回应请客、代下单和婉拒的四组对话。
 - 想提出用词、检索或场景建议，可查看[读者反馈与案例征集](docs/读者反馈与案例征集.md)。

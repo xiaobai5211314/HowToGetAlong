@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://renqingshigu.21212121.xyz/sitemap.xml

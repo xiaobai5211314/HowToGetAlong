@@ -1,0 +1,14 @@
+# Apache configuration for static site
+AddDefaultCharset UTF-8
+<IfModule mod_mime.c>
+  AddType text/html;charset=UTF-8 .html
+  AddType application/json;charset=UTF-8 .json
+  AddType text/markdown;charset=UTF-8 .md
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/x-icon "access plus 1 month"
+  ExpiresByType text/css "access plus 1 week"
+  ExpiresByType application/javascript "access plus 1 week"
+</IfModule>
