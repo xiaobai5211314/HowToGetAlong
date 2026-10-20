@@ -1,0 +1,61 @@
+name: 自动部署到生产服务器
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-renqing
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    name: Deploy to Server
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 设置 Python 运行环境
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: 安装依赖并重新编译 Claude UI 检索单页
+        run: |
+          pip install Pillow
+          python tools/build_claude_ui.py
+
+      - name: 配置 SSH 密钥
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SERVER_SSH_KEY }}" | tr -d '\r' > ~/.ssh/deploy_key
+          chmod 600 ~/.ssh/deploy_key
+          ssh-keyscan -p ${{ secrets.SERVER_PORT || 22 }} -H "${{ secrets.SERVER_HOST }}" >> ~/.ssh/known_hosts
+
+      - name: 同步文件至服务器
+        run: |
+          rsync -avzc --no-perms --no-owner --no-group \
+            -e "ssh -i ~/.ssh/deploy_key -p ${{ secrets.SERVER_PORT || 22 }} -o StrictHostKeyChecking=no" \
+            --exclude='.git*' \
+            --exclude='.user.ini' \
+            --exclude='*.log' \
+            --exclude='*.bak*' \
+            ./ ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }}:/www/wwwroot/renqing.21212121.xyz/
+
+      - name: 修复服务器权限与重载 Nginx
+        run: |
+          ssh -i ~/.ssh/deploy_key -p ${{ secrets.SERVER_PORT || 22 }} -o StrictHostKeyChecking=no ${{ secrets.SERVER_USER }}@${{ secrets.SERVER_HOST }} << 'EOF'
+            set -e
+            cd /www/wwwroot/renqing.21212121.xyz
+            if [ -f .user.ini ]; then chattr -i .user.ini 2>/dev/null || true; fi
+            chown -R www:www .
+            chmod -R 755 .
+            if [ -f .user.ini ]; then chattr +i .user.ini 2>/dev/null || true; fi
+            nginx -t && nginx -s reload
+            echo "人情世故指南 (renqing.21212121.xyz) 自动部署完成！"
+          EOF
