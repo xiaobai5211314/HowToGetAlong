@@ -282,6 +282,33 @@ html.dark .toast { background: #faf9f5; color: #141413; }
   .nav-links { display: none; }
   .search { max-width: none; }
 }
+
+@media (max-width: 640px) {
+  .nav-in { padding: 0 10px; gap: 8px; }
+  .title .nav-badge { display: none; }
+  .search kbd { display: none; }
+  .search input { height: 34px; padding: 0 10px 0 32px; font-size: 13px; }
+  .search svg { left: 9px; width: 14px; height: 14px; }
+  .menu-btn { width: 34px; height: 34px; }
+  .content { padding-left: 12px; padding-right: 12px; }
+  .hero { margin-bottom: 18px; padding-bottom: 14px; }
+  .hero h1 { font-size: 22px; line-height: 1.3; }
+  .hero p { font-size: 13.5px; }
+  .hero-stats { gap: 8px 12px; font-size: 12px; }
+  .card { padding: 14px 14px; border-radius: 10px; }
+  .card-top { gap: 6px; flex-wrap: wrap; margin-bottom: 8px; }
+  .card-title { font-size: 16px; line-height: 1.4; margin: 0 0 10px; }
+  .field-situation { padding: 8px 10px; font-size: 12.5px; }
+  .field-judgment { font-size: 13px; line-height: 1.6; }
+  .details-body { font-size: 13px; }
+}
+
+@media (max-width: 440px) {
+  .title span:not(.logo) { font-size: 15px; }
+  .switch { width: 36px; height: 20px; }
+  .switch .knob { width: 16px; height: 16px; }
+  html.dark .switch .knob { transform: translateX(16px); }
+}
 </style>
 </head>
 <body>
