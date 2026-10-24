@@ -5,7 +5,7 @@
 用法：python tools/sync_upstream.py
 功能：
 1. 检查并拉取原作者 upstream (kkk-bot/HowToGetAlong) 的最新修改
-2. 自动合并到本地分支
+2. 自动合并到本地分支（自动保留自定义并处理冲突）
 3. 自动重新编译 Claude 雅致风格的 index.html
 4. 提交并推送至 origin (xiaobai5211314/HowToGetAlong)
 5. 自动触发 GitHub Actions 部署至生产服务器 (renqing.21212121.xyz)
@@ -23,7 +23,7 @@ def run(cmd, check=True):
     if res.stdout:
         print(res.stdout.strip())
     if res.stderr and res.returncode != 0:
-        print(f"[!] 错误: {res.stderr.strip()}", file=sys.stderr)
+        print(f"[!] 提示/输出: {res.stderr.strip()}", file=sys.stderr)
     if check and res.returncode != 0:
         sys.exit(res.returncode)
     return res
@@ -49,18 +49,25 @@ def main():
         print("[✓] 当前仓库已是上游最新版本，无需合并！")
     else:
         print(f"[*] 发现上游存在 {diff} 个新提交，正在合并...")
-        run("git merge upstream/main -m 'chore: merge upstream updates'")
+        # 尝试使用 ours 策略解决冲突
+        merge_res = run('git merge upstream/main -m "chore: merge upstream updates"', check=False)
+        if merge_res.returncode != 0:
+            print("[*] 检测到合并冲突（如自定义 index.html），自动采用本地 Claude UI 策略恢复...")
+            run("git checkout --ours index.html")
 
     # 4. 重新构建 Claude UI 检索单页
     print("[*] 正在基于最新正文重新编译 Claude UI 检索单页...")
-    run(f"{sys.executable} tools/build_claude_ui.py")
+    run(f'"{sys.executable}" tools/build_claude_ui.py')
 
     # 5. 检查本地是否有待提交文件
     status = run("git status --porcelain").stdout.strip()
-    if status:
-        print("[*] 发现变动文件，正在提交至本地 Git...")
-        run("git add .")
-        run("git commit -m 'feat: sync upstream updates and rebuild Claude UI portal'")
+    ahead = run("git rev-list origin/main..HEAD --count").stdout.strip()
+    
+    if status or ahead != "0":
+        if status:
+            print("[*] 发现变动文件，正在提交至本地 Git...")
+            run("git add .")
+            run('git commit -m "feat: sync upstream updates and rebuild Claude UI portal"')
         print("[*] 正在推送至 GitHub 仓库 (origin main)...")
         run("git push origin main")
         print("=" * 60)
